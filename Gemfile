@@ -64,7 +64,7 @@ gem 'jquery-rails'
 
 gem 'popper_js', '1.11.1'
 gem 'bootstrap', '4.0.0.alpha6'
-
+gem 'simple_form'
 source 'https://rails-assets.org' do
     gem 'rails-assets-tether', '>= 1.3.3'
 end      
@@ -72,42 +72,4 @@ end
 ## Gemfile for Rails 3+
 gem 'will_paginate', '~> 3.1.1'
 gem 'will_paginate-bootstrap' 
-#this is needed to add bootsrap style to pagination
-Item.paginate page: params[:page], per_page: 10
-#erb files
-<%= will_paginate @items , renderer: RemoteLinkPagination::LinkRenderer %>
--# haml file
-= will_paginate @items, renderer: RemoteLinkPagination::LinkRendere
-def link(text, target, attributes = {})
-  attributes['data-remote'] = true
-  super 
- end 
- 
- .text-center 
-  = will_paginate airports, renderer: RemoteLinkPagination::LinkRenderer
-    
-%table.table.table-bordered
-  %thead.thead-dark
-    %tr
-    %th Iata
-    %th Iso
-    %th Name
-    %th Type
-    %th Size
-    %th Longitude
-    %th Latitude
-    %th{colspan: "3"} Actions
-  %tbody
-    - airports.each do |airport|  
-      %tr
-        %td= airport.iata
-        %td= airport.iso
-        %td= airport.name
-        %td= airport.airport_type
-        %td= airport.size
-        %td= airport.longitude
-        %td= airport.latitude
-        %td= link_to 'Show', airport, class: "btn btn-primary"
-        %td= link_to 'Edit', edit_airport_path(airport), class: "btn btn-warning"
-        %td= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"
- 
+#this is needed to add bootsrap style to pagination 

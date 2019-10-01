@@ -21,7 +21,9 @@ module Nomster
 
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
+
+    config.autoload_paths << Rails.root.join('lib')
+
   end
 end
 
-config.autoload_paths << Rails.root.join('lib')
