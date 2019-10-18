@@ -12,9 +12,3 @@
 <% end %>
 
 <%= will_paginate @places %>
--# haml file
-= will_paginate @items, renderer: RemoteLinkPagination::LinkRendere
-def link(text, target, attributes = {})
-  attributes['data-remote'] = true
-  super 
- end
