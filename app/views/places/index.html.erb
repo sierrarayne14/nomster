@@ -8,16 +8,20 @@
       <small><%= place.user.email %></small>
     <% end %>
 
-  <% if place.comments.present? %>
-    <div class="col-12">
-      <blockquote>
-        <% if comment.humanized_rating.present? %>
-          <b><%= place.comments.last.humanized_rating.present? %></b> -
+    <% if place.comments.present? %>
+      <div class="col-12">
+        <% if place.comments.present? %>
+          <% comment= place.comments.last %>
+          <blockquote>
+            <% if comment.humanized_rating.present? %>
+              <b><%= place.comments.last.humanized_rating.present? %></b> -
+            <% end %>
+            <%= comment.message %>
+            <small><%= comment.user.email %></small>
+          </blockquote>
         <% end %>
-        <%= place.comments.last.message %>
-        <small><%= place.comments.last.user.email %></small>
-      </blockquote>
-    </div>
+      </div>
+    <% end %>  
   </div>
 <% end %>
 
