@@ -26,12 +26,11 @@
       });
     }
   </script>
-  <script>
-    src="https://maps.googleapis.com/maps/api/js?key+AIzaSyA2ZSPFDcrmJ_KLStQeon73FznfZvokhaQ&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key+AIzaSyA2ZSPFDcrmJ_KLStQeon73FznfZvokhaQ&callback=initMap">
   </script>
     <div id="map"></div>
   <% end %>
-  
+
   <div style="float: right">
     <%if current_user && current_user == @place.user %>  
       <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
