@@ -26,7 +26,7 @@
       });
     }
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key+AIzaSyA2ZSPFDcrmJ_KLStQeon73FznfZvokhaQ&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2ZSPFDcrmJ_KLStQeon73FznfZvokhaQ&callback=initMap">
   </script>
     <div id="map"></div>
   <% end %>
@@ -98,7 +98,9 @@
 <h1>Photos</h1>
 <% @place.photos.each do |photo| %>
   <div class="row">
-    <%= image_tag photo.picture.url, class: 'row' %>
-  <div class="col-12 col-sm-6">
+    <div class="col-sm-6">
+      <%= image_tag photo.picture.url, class: 'place_pick' %>
+    </div>
+  </div>
 <% end %>
 
